@@ -1,0 +1,41 @@
+{
+  "name": "react-native-hocs",
+  "version": "0.0.1",
+  "description": "Common React Native Higher Order Components",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phanhoangloc/react-native-hocs.git"
+  },
+  "keywords": [
+    "hoc",
+    "enhancer",
+    "higher-order-component",
+    "react",
+    "react-native"
+  ],
+  "author": "Loc Phan <phanhoangloc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phanhoangloc/react-native-hocs/issues"
+  },
+  "homepage": "https://github.com/phanhoangloc/react-native-hocs#readme",
+  "devDependencies": {
+    "@types/recompose": "^0.27.0",
+    "prettier": "1.14.3",
+    "typescript": "3.1.1"
+  },
+  "dependencies": {
+    "insert-if": "1.1.0",
+    "ramda-adjunct": "2.10.0",
+    "recompose": "0.30.0"
+  }
+}
