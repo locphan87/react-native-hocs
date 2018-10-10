@@ -1,23 +1,20 @@
-import { equals } from 'ramda'
-import * as React from 'react'
+import { SFC } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { compose, withProps, withState } from 'recompose'
 
 interface IUpdateOptions {
   updates: string[]
-  component: React.SFC<any>
+  component: SFC<any>
 }
 
-const withUpdating = component => WrappedComponent => ({
-  isUpdaing,
+const withUpdating = LoadingComponent => WrappedComponent => ({
+  isUpdating,
   ...rest
 }) => {
-  const isUpdating = equals(true, isUpdaing)
-
   return (
     <View style={styles.container}>
       <WrappedComponent {...rest} />
-      {isUpdating && <component style={styles.updating} />}
+      {isUpdating && <LoadingComponent style={styles.updating} />}
     </View>
   )
 }
@@ -53,7 +50,7 @@ const simulatePending = updates => props =>
 
 const withUpdatingCreator = ({ updates, component }: IUpdateOptions) =>
   compose(
-    withState('isUpdaing', 'setUpdating', false),
+    withState('isUpdating', 'setUpdating', false),
     withProps(simulatePending(updates)),
     withUpdating(component)
   )

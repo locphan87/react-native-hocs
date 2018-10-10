@@ -28,9 +28,15 @@
     "url": "https://github.com/phanhoangloc/react-native-hocs/issues"
   },
   "homepage": "https://github.com/phanhoangloc/react-native-hocs#readme",
+  "peerDependencies": {
+    "react": ">= ^16.3",
+    "react-native": ">= ^0.55.4"
+  },
   "devDependencies": {
     "@types/recompose": "^0.27.0",
     "prettier": "1.14.3",
+    "react": "^16.3",
+    "react-native": "^0.55.4",
     "typescript": "3.1.1"
   },
   "dependencies": {
