@@ -1,4 +1,4 @@
-import { SFC } from 'react'
+import { SFC, CSSProperties } from 'react'
 import insertIf from 'insert-if'
 import { isNonEmptyArray, isNilOrEmpty } from 'ramda-adjunct'
 import { compose } from 'recompose'
@@ -8,8 +8,9 @@ import { withLoadingCreator, ILoadingOptions } from './withLoading.hoc'
 import { withUpdatingCreator, IUpdateOptions } from './withUpdating.hoc'
 
 interface IWithAppCreator {
-  LoadingComponent: SFC<any>
+  loadingComponent: SFC<any>
   loadingPredicate(): boolean
+  updatingStyle?: CSSProperties
 }
 interface IWithApp {
   updates?: string[]
@@ -17,19 +18,21 @@ interface IWithApp {
 }
 
 const withAppCreator = ({
-  LoadingComponent,
-  loadingPredicate
+  loadingComponent,
+  loadingPredicate,
+  updatingStyle
 }: IWithAppCreator) => ({
   updates = [],
   renderWhen: renderBranches = []
 }: IWithApp = {}) => (WrappedComponent: SFC<any>) => {
   const loadingOptions: ILoadingOptions = {
     predicate: loadingPredicate,
-    component: LoadingComponent
+    component: loadingComponent
   }
   const updateOptions: IUpdateOptions = {
     updates,
-    component: LoadingComponent
+    updatingStyle,
+    component: loadingComponent
   }
   const enhancers = [
     ...insertIf(
