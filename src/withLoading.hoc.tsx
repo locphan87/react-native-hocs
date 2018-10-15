@@ -2,7 +2,7 @@ import { SFC } from 'react'
 import { branch, renderComponent } from 'recompose'
 
 interface ILoadingOptions {
-  predicate(): boolean
+  predicate(obj: any): boolean
   component: SFC<any>
 }
 

@@ -2,7 +2,7 @@ import { SFC } from 'react'
 import { branch, compose, renderComponent, renderNothing } from 'recompose'
 
 interface IRenderBranch {
-  when(): boolean
+  when(obj: any): boolean
   render: SFC<any> | 'NOTHING'
 }
 

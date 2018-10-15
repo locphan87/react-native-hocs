@@ -9,9 +9,10 @@ import { withUpdatingCreator, IUpdateOptions } from './withUpdating.hoc'
 
 interface IWithAppCreator {
   loadingComponent: SFC<any>
-  loadingPredicate(): boolean
+  loadingPredicate(obj: any): boolean
   updatingStyle?: CSSProperties
 }
+
 interface IWithApp {
   updates?: string[]
   renderWhen?: IRenderBranch[]

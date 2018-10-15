@@ -16,7 +16,7 @@ Render related components conditionally
 
 ```ts
 interface IRenderBranch {
-  when(): boolean
+  when(obj: any): boolean
   render: SFC<any> | 'NOTHING'
 }
 ```
@@ -80,7 +80,7 @@ Show a spinner conditionally as a replacement for the wrapped component (i.e whi
 
 ```ts
 interface ILoadingOptions {
-  predicate(): boolean
+  predicate(obj: any): boolean
   component: SFC<any>
 }
 ```
@@ -147,7 +147,7 @@ export default withUpdating(MyComponent)
 ```ts
 interface IWithAppCreator {
   loadingComponent: SFC<any>
-  loadingPredicate(): boolean
+  loadingPredicate(obj: any): boolean
   updatingStyle?: CSSProperties
 }
 ```
