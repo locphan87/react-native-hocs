@@ -2,6 +2,16 @@
 
 A collection of small, reusable Higher Order Components (HOCs) for building React Native apps
 
+Table of Contents
+=================
+
+* [Getting started](#getting-started)
+* [APIs](#apis)
+   * [renderWhen](#renderwhen)
+   * [withLoadingCreator](#withloadingcreator)
+   * [withUpdatingCreator](#withupdatingcreator)
+   * [withApp](#withapp)
+
 ## Getting started
 
 ```sh
